@@ -8,10 +8,10 @@ def run(total_slots, handicapped_rate=0.3):
     """
     * It creates a parking slot for the disabled from the total parking slot according to
     * the rate specified in the 'handicapped_rate' parameter.
-    * 
     * Then, the float output is converted to integer and averaged by round.
     * For example, 2 for 1.5 and above, 1 for 1.4 and below.
     """
+
     handicapped_rate = total_slots * handicapped_rate
     handicapped_slot_count = int(round(handicapped_rate))
 
