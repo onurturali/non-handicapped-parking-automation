@@ -51,7 +51,7 @@ def run(datetime_range, count, datetime_format='%d/%m/%Y %H:%M:%S'):
 * To run below codes please import json lib.
 
 if __name__ == '__main__':
-    car_entry_req = run(['20/1/2020 23:50:00', '21/1/2020 00:00:00'])
+    car_entry_req = run(['20/1/2020 23:50:00', '21/1/2020 00:00:00'], 10)
     print(car_entry_req)
 
     # JSON output
