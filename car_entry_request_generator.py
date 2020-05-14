@@ -28,18 +28,22 @@ from datetime import datetime
 * carreq_data dict
 """
 
-
-def run(datetime_range, datetime_format='%d/%m/%Y %H:%M:%S'):
+def run(datetime_range, count, datetime_format='%d/%m/%Y %H:%M:%S'):
     start = datetime.strptime(datetime_range[0], datetime_format)
     end = datetime.strptime(datetime_range[1], datetime_format)
     is_handicapped = random.choice([True, False])
+    car_req_data = {}
 
-    delta = end - start
-    int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
-    random_second = randrange(int_delta)
-    entry_datetime = datetime.strftime(start + timedelta(seconds=random_second), datetime_format)
+    i = 0
 
-    car_req_data = {'is_handicapped': is_handicapped, 'entry_datetime': entry_datetime, 'entry_request': 0}
+    while i < count:
+        delta = end - start
+        int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
+        random_second = randrange(int_delta)
+        entry_datetime = datetime.strftime(start + timedelta(seconds=random_second), datetime_format)
+
+        car_req_data[i] = {'is_handicapped': is_handicapped, 'entry_datetime': entry_datetime, 'entry_request': 0}
+        i = i + 1
     return car_req_data
 
 """
@@ -49,4 +53,10 @@ def run(datetime_range, datetime_format='%d/%m/%Y %H:%M:%S'):
 if __name__ == '__main__':
     car_entry_req = run(['20/1/2020 23:50:00', '21/1/2020 00:00:00'])
     print(car_entry_req)
+
+    # JSON output
+    car_entry_req = run(['01/01/2020 18:00:00', '20/02/2020 00:00:00'], 5)
+    parsedjson = json.loads(json.dumps(car_entry_req))
+    output = json.dumps(parsedjson, indent=2)
+    print(output)
 """

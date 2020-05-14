@@ -1,5 +1,4 @@
 import random
-import json
 import parking_lot_generator as lot_generator
 import car_entry_request_generator as entry_generator
 
@@ -43,7 +42,6 @@ def run(parking_lot_function, type):
     
 """
 * Below codes runs only in testing process. Except this those code lines are useless.
-* To run below codes please import json lib.
 
 if __name__ == '__main__':
     print(run(lot_generator.run(20, 0.5), 'nonhandicapped'))
