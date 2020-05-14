@@ -1,6 +1,11 @@
 import random
 
-
+"""
+* Important parameters and values to use and define:
+* handicapped_rate int
+* handicapped_slots_count int
+* data dict
+"""
 def run(total_slots, handicapped_rate=0.3):
     data, slot, numbers = {}, {}, []
     i, j = 0, 0
@@ -50,8 +55,8 @@ def run(total_slots, handicapped_rate=0.3):
 * To run below codes please import json lib.
 
 if __name__ == '__main__':
-    parking_area = create_parking_area(20, 0.5)
-    parsed_json = json.loads(json.dumps(parking_area))
+    parking_lot = run(20, 0.5)
+    parsed_json = json.loads(json.dumps(parking_lot))
     output = json.dumps(parsed_json, indent=2)
     print(output)
 """

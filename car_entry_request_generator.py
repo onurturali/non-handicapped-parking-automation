@@ -19,6 +19,13 @@ from datetime import datetime
 * The end day in date format must be one day ahead. A different clock system is not possible on the same day.
 * 
 * The function below named run, generates randomly is_handicapped value. It generates just True or just False.
+* 
+* Important parameters and values to use and define:
+* start datetime.strptime
+* end datetime.strptime
+* delta datetime.strptime
+* is_handicapped int
+* carreq_data dict
 """
 
 
@@ -33,15 +40,13 @@ def run(datetime_range, datetime_format='%d/%m/%Y %H:%M:%S'):
     entry_datetime = datetime.strftime(start + timedelta(seconds=random_second), datetime_format)
 
     car_req_data = {'is_handicapped': is_handicapped, 'entry_datetime': entry_datetime, 'entry_request': 0}
-
     return car_req_data
-
 
 """
 * Below codes runs only in testing process. Except this those code lines are useless.
-"""
+* To run below codes please import json lib.
+
 if __name__ == '__main__':
     car_entry_req = run(['20/1/2020 23:50:00', '21/1/2020 00:00:00'])
     print(car_entry_req)
-
-
+"""
