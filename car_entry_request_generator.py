@@ -31,12 +31,13 @@ from datetime import datetime
 def run(datetime_range, count, datetime_format='%d/%m/%Y %H:%M:%S'):
     start = datetime.strptime(datetime_range[0], datetime_format)
     end = datetime.strptime(datetime_range[1], datetime_format)
-    is_handicapped = random.choice([True, False])
+    
     car_req_data = {}
 
     i = 0
 
     while i < count:
+        is_handicapped = random.choice([True, False])
         delta = end - start
         int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
         random_second = randrange(int_delta)
