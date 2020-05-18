@@ -2,13 +2,14 @@
  non handicapped parking automation with virtualization.
 
  ## How it works?
- The parking lot automatically creates itself by respecting the handicapped / nonhandicapped lot ratio.
- Car entry requests are create within a certain date range, also.
- If there is still room available for handicapped or nonhandicapped, vehicles start to enter the parking lot in order.
+ 1. The parking lot automatically creates itself by respecting the handicapped / nonhandicapped lot ratio.
+ 2. Car entry requests are create within a certain date range, also.
+ 3. If there is still room available for handicapped or nonhandicapped, vehicles start to enter the parking lot in order.
 
  ## What is being done now?
- Cars exit the parking lot.
+ 1. Cars exit the parking lot.
 
+# About functions
 parking_area_generator.py file generates randomly parking slots. Also parking design can be drawn.
 - Handicapped slot range can be defined.
 - Total slots can be defined.
