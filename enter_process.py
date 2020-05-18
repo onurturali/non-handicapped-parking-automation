@@ -16,7 +16,7 @@ def run():
     parking_lot = parking_lot_generator.run(10, 0.5)
     handicapped_slots = slot_type_seperator.run(parking_lot, 'handicapped')
     nonhandicapped_slots = slot_type_seperator.run(parking_lot, 'nonhandicapped')
-    car_req = car_entry_request_generator.run(['20/1/2020 23:50:00', '21/1/2020 00:00:00'], 15)
+    car_req = car_entry_request_generator.run(['20/1/2020 23:50:00', '21/1/2020 00:00:00'], 30)
 
     is_handicapped, selected_slot, i = None, 0, 0
     car_in_lot, filled_slots = [], {'handicapped': [], 'nonhandicapped': []}
@@ -65,7 +65,7 @@ def run():
             print(f'Filled slots: {filled_slots[slot_type]}')
         else:
             print(messages[slot_type]['no_free_slot'])
-            print(' Car ID: ', i)
+            print('Car ID: ', i)
         print('\n', '-'*50, '\n')
         i = i + 1
 
